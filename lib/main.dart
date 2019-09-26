@@ -1,9 +1,8 @@
+import 'package:todo/router.dart';
 import 'package:flutter/material.dart';
-import 'package:todo/pages/login.dart';
-
-// import 'package:localstorage/localstorage.dart';
 
 void main() {
+  FluroRouter.setupRouter();
   runApp(MyApp());
 }
 
@@ -11,8 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "TODO's",
-      home: LoginPage(),
-    );
+        initialRoute: 'login',
+        onGenerateRoute: FluroRouter.router.generator);
   }
 }
